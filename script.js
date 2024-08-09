@@ -5,7 +5,7 @@ function selectSound(id)
 {
     if(id == "trumpIM")
     {
-        playAudio = new Audio ("/audio/trumpIM.mp3") ;
+        playAudio = new Audio ("/audio/trumpIm.mp3") ;
     }
     return;
 }
