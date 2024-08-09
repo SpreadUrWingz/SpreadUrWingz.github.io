@@ -6,7 +6,7 @@
     border-width: 8px;
 }
 
-.colorless
+.colorless 
 {
     margin-left: auto;
     margin-right: auto;
@@ -62,4 +62,32 @@
     margin-right: auto;
     border-radius: 3px;
     border: 5px solid lightgray;
+}
+
+.button
+{
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    max-width: 20vw;
+    max-height: 20vw;
+}
+
+.selfPortrait
+{
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    max-width: 25vw;
+    max-height: 25vw; 
+    text-align: center;
+}
+.active
+{
+    color: purple;
+}
+
+.fullart
+{
+    border-width: 0px!important;
 }

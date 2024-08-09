@@ -8,16 +8,18 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles.css"> </link>
+        <script src="/script.js" defer></script>
     </head>
 
     <!-- content -->
-<nav class="navbar navbar-light justify-content-center">
-            <div class ="navbar-nav container-fluid fw-bold">
-                <a href="#">HOME</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class ="navbar-nav container-fluid fw-bold">
+                <a href="#" class="active">HOME</a>
                 <a href="contact.html">CONTACT</a>
+                <a href="silly.html">DO NOT CLICK</a>
             </div>
 </nav>
-    <body class="main-content">
+<body class="main-content">
 
         <div class="card colorless" style="width: 18rem;">
             <!--Name/HP/Type/Stage-->
@@ -31,7 +33,7 @@
             </div>
 
             <!--image-->
-            <img src="/images/SV01_EN_155.png" class="card-img-top">
+            <img src="/images/SV01_EN_155zoom.png" class="card-img-top">
 
             <!--dex data-->
             <p class="dex-data">NO.0915 Hog Pokémon HT.1.8' 22.5 lbs</p>
@@ -48,51 +50,27 @@
                 <div style="display: flex; align-items: center;">
                     <h4 style="margin: 0 0 0 5px;">30</h4>
                 </div>
+            </div>
 
             </ul>
+            <div>
             <li class="list-group-item" style="font-size: 12px; text-align: center;"> weakness [F] x2 | resistance | retreat [C]</li>
             <li class="list-group-item" style="font-size: 10px; text-align: left;">Illus. kodama</li>
             <li class="list-group-item" style="font-size: 11px; text-align: left;"> {G} [SVI01] 155/198 •</li>
             </div>
+          </div> 
           </div>
+          <div class="card fullart" style="width: 18rem;" onclick="nextCard('SV01_EN_155.png')">
 
-          <div class="card grass" style="width: 18rem;">
-            <!--Name/HP/Type/Stage-->
-            <h4 class="card-title" style="margin: 0; font-size: 10px;">BASIC</h4>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h4 class="card-title" style="margin: 0;">Logan</h4>
-                <div style="display: flex; align-items: center;">
-                    <p style="margin: 0;">HP</p>
-                    <h4 style="margin: 0 0 0 5px;">130[G]</h4>
-                </div>
-            </div>
+            <img id="fluid" src="/images/SV01_EN_155.png" class="fullart">
+    
+          </div>    
+          <div class="card fullart" style="width: 18rem;">
 
-            <!--image-->
-            <img src="/images/unnamed.jpg" class="card-img-top">
-
-            <!--dex data-->
-            <p class="dex-data">NO.6969 Swag Pokémon HT.6.12' 150 lbs</p>
-
-            <!--attacks/ability-->
-            <div class="card-body">
-            <ul class="list-group list-group-flush">
-                <div>
-              <h5 class="list-group-item attack" style="padding: 0%; margin: 0;">[G] Swag</h5>
-              <li class="list-group-item effect" style="padding-top: 0%; font-size: 13px;">You may attach a basic [G] energy from your hand to this Pokémon.</li>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h5 class="list-group-item attack" style="margin: 0; margin-left: -7%;">[G][G][G] Hell Yeah</h5>
-                <div style="display: flex; align-items: center;">
-                    <h4 style="margin: 0 0 0 5px;">60+</h4>
-                </div>
-            </ul>
-            <li class="list-group-item effect" style="padding-top: 0%; padding-bottom: 6px; font-size: 13px;">If you are locked tf in this attack does 120 more damage.</li>
-
-            <!--weakness/resitance/retreat/illus/set info-->
-            <li class="list-group-item" style="font-size: 12px; text-align: center;"> weakness [R] x2 | resistance | retreat [C][C]</li>
-            <li class="list-group-item" style="font-size: 10px; text-align: left;">Illus. obamna</li>
-            <li class="list-group-item" style="font-size: 11px; text-align: left;"> {H} [TYBG01] 69/420 ★</li>
-            </div>
-          </div>
+            <img src="/images/SV03_EN_209.png" class="fullart">
+    
+          </div>   
+          
     </body>
+ 
 </html>
