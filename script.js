@@ -7,6 +7,10 @@ function selectSound(sound)
     {
         playAudio = new Audio ("/audio/trumpIm.mp3") ;
     }
+    else if(sound == "scream")
+    {
+        playAudio = new Audio ("/audio/scream.mp3")
+    }
     return;
 }
 
@@ -104,5 +108,25 @@ function generatePack(set, cardCount)
 
         document.getElementById(`card${i}`).src = `https://www.pokemon.com/static-assets/content-assets/cms2/img/cards/web/${set}/${set}_EN_${num}.png`;
     }
+
+}
+
+function jumpscare()
+{
+    if(playAudio)
+        {
+            playAudio.pause();
+        }
+    
+    document.getElementById("jumpscare").src = "/images/chippy.png"
+    selectSound("scream");
+    playAudio.play();
+    
+    setTimeout(
+        function(){ 
+            document.getElementById("jumpscare").src = "";
+            playAudio.pause();
+        }
+    , 500);
 
 }
