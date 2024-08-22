@@ -13,18 +13,23 @@
     </head>
 
     <!-- content -->
-<nav class="navbar navbar-light justify-content-center">
-            <div class ="navbar-nav container-fluid fw-bold">
-                <a href="index.html">HOME</a>
-                <a href="contact.html">CONTACT</a>
-                <a href="#" class="active">DO NOT CLICK</a>
-
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+        <div class ="navbar-nav container-fluid fw-bold container">
+        <a href="index.html">HOME</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="#"  class="active">DO NOT CLICK</a>
+        <a href="packopener.html">POKEMON PACK OPENER</a>
+        
+    </div>
+    <div class="button-colormode">
+        <img class="button-colormode" id="color-button" src="/images/buttonOFF.png" onclick="changeColorMode()">
+        <p id="mode-label">Dark Mode</p>
+    </div>   
+    
 </nav>
-
-    <body class="main-content">
+<body class="main-content bg-light" id="main">
         <div class="button">
-            <img class="button" src="/images/buttonOFF.png" id="button" onclick="buttonPress('trumpIM', 1100)">
+            <img class="button" src="/images/buttonOFF.png" id="button" onclick="buttonPress('button', 'trumpIM', 1100)">
         </div>
     </body>
 </html>

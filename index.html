@@ -12,14 +12,21 @@
     </head>
 
     <!-- content -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class ="navbar-nav container-fluid fw-bold">
-                <a href="#" class="active">HOME</a>
-                <a href="contact.html">CONTACT</a>
-                <a href="silly.html">DO NOT CLICK</a>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+        <div class ="navbar-nav container-fluid fw-bold container">
+        <a href="#"  class="active">HOME</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="silly.html">DO NOT CLICK</a>
+        <a href="packopener.html">POKEMON PACK OPENER</a>
+        
+    </div>
+    <div class="button-colormode">
+        <img class="button-colormode" id="color-button" src="/images/buttonOFF.png" onclick="changeColorMode()">
+        <p id="mode-label">Dark Mode</p>
+    </div>   
+    
 </nav>
-<body class="main-content">
+<body class="main-content bg-light" id="main">
 
         <div class="card colorless" style="width: 18rem;">
             <!--Name/HP/Type/Stage-->
@@ -62,7 +69,7 @@
           </div>
           <div class="card fullart" style="width: 18rem;" onclick="nextCard('SV01_EN_155.png')">
 
-            <img id="fluid" src="/images/SV01_EN_155.png" class="fullart">
+            <img id="fluid" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV01/SV01_EN_1.png" class="fullart">
     
           </div>    
           <div class="card fullart" style="width: 18rem;">

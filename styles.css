@@ -1,3 +1,8 @@
+.main-content
+{
+    background-color: white;
+}
+
 .card
 {
     margin-left: auto;
@@ -71,8 +76,26 @@
     align-content: center;
     max-width: 20vw;
     max-height: 20vw;
+    
 }
-
+.button-colormode 
+{
+    display: flex;
+}
+.button-colormode img
+{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20vw;
+    max-height: 20vw;
+    width: 2vw;
+    height: 2vw;
+    display: block;
+}
+.button-colormode p
+{
+    margin: .5vw; 
+}
 .selfPortrait
 {
     margin-left: auto;
