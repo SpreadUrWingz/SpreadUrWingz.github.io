@@ -90,3 +90,19 @@ function changeColorMode()
 
 
 }
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+  
+function generatePack(set, cardCount)
+{
+    for(let i = 1; i < 11; i++)
+    {
+        do
+            var num  = getRandomInt(cardCount);
+        while(num == 0)
+
+        document.getElementById(`card${i}`).src = `https://www.pokemon.com/static-assets/content-assets/cms2/img/cards/web/${set}/${set}_EN_${num}.png`;
+    }
+
+}

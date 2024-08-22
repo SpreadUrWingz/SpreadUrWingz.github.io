@@ -114,3 +114,15 @@
 {
     border-width: 0px!important;
 }
+
+.pack-layout
+{
+    display: flex;
+
+}
+
+.pack-layout img
+{
+    display: block;
+    margin-top: 2.5vw;
+}
