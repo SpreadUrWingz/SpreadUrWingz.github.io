@@ -1,6 +1,22 @@
 var playAudio ;
 var time ;
 
+//handles colormode consistency across pages
+$(function(){
+
+    console.log(localStorage.getItem("colormode"));
+    if(localStorage.getItem("colormode") == null)
+    {
+        localStorage.setItem("colormode", "main-content bg-light");
+    }
+    console.log(localStorage.getItem("colormode"));
+
+    if(localStorage.getItem("colormode") != document.getElementById("main").className)
+        changeColorMode("script");
+
+});
+
+
 function selectSound(sound)
 {
     if(sound == "trumpIM")
@@ -58,45 +74,56 @@ function nextCard(src)
     document.getElementById("fluid").src = `${baseURL}${startNum}.png`;
 }
 
-function changeColorMode()
+function changeColorMode(who)
 {
-    document.getElementById("color-button").src = "/images/buttonON.png";
-
+    if(who != "script")
+        document.getElementById("color-button").src = "/images/buttonON.png";
+    
     var main = document.getElementById("main");
     var text = document.getElementById("text");
     var label = document.getElementById("mode-label");
     var navbar = document.getElementById("nav");
+
+    var mode;
     
     if(main.className == "main-content bg-dark")
     {
-            main.className = "main-content bg-light"
-            label.textContent = "Dark Mode";
-            label.style.color = "black";
-            navbar.className = "navbar navbar-expand-lg navbar-light bg-light";
+        main.className = "main-content bg-light";
+        label.textContent = "Dark Mode";
+        label.style.color = "black";
+        navbar.className = "navbar navbar-expand-lg navbar-light";
+        navbar.style = "background-color: #ffffff";
+
         if(text){
-        text.style.color = "black"; 
+            text.style.color = "black"; 
         }
+        localStorage.setItem("colormode", "main-content bg-light");
+        mode = "light";
     }
     else
     {
-            main.className = "main-content bg-dark"
-            label.textContent = "Light Mode";
-            label.style.color = "white";
-            navbar.className = "navbar navbar-expand-lg navbar-dark";
-            navbar.style = "background-color: #333333"
-
+        main.className = "main-content bg-dark";
+        label.textContent = "Light Mode";
+        label.style.color = "white";
+        navbar.className = "navbar navbar-expand-lg navbar-dark";
+        navbar.style = "background-color: #333333";
+    
         if(text){ 
             text.style.color = "white";
         }
+        localStorage.setItem("colormode", "main-content bg-dark");
+        mode = "dark";
     }
-    setTimeout(function(){ document.getElementById("color-button").src = "/images/buttonOFF.png"; }, 100);
     
+    if(who != "script")
+        setTimeout(function(){ document.getElementById("color-button").src = "/images/buttonOFF.png"; }, 100);
 
-
+    return mode;
 }
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  }
+}
   
 function generatePack(set, cardCount)
 {
