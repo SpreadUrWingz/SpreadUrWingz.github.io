@@ -98,7 +98,6 @@ function changeColorMode(who)
             text.style.color = "black"; 
         }
         localStorage.setItem("colormode", "main-content bg-light");
-        mode = "light";
     }
     else
     {
@@ -112,20 +111,17 @@ function changeColorMode(who)
             text.style.color = "white";
         }
         localStorage.setItem("colormode", "main-content bg-dark");
-        mode = "dark";
     }
     
     if(who != "script")
         setTimeout(function(){ document.getElementById("color-button").src = "/images/buttonOFF.png"; }, 100);
-
-    return mode;
 }
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
   
-function generatePack(set, cardCount)
+function generatePackOld(set, cardCount)
 {
     for(let i = 1; i < 11; i++)
     {
@@ -137,6 +133,24 @@ function generatePack(set, cardCount)
     }
 
 }
+
+function generatePack(set)
+{
+    fetch(`http://localhost:3000/${set}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();           
+            })
+            .then(data => {
+                for(let i = 0; i < 10; i++)
+                document.getElementById(`card${i+1}`).src = data[i].images.small;
+
+            })
+            .catch(error => console.error('Error fetching data:', error));
+}
+
 
 function jumpscare()
 {
