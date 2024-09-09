@@ -133,7 +133,6 @@ function generatePackOld(set, cardCount)
 
 function generatePack(set)
 {
-    console.log('hello world');
     fetch(`http://localhost:3000/packGenerator/${set}`)
             .then(response => {
                 if (!response.ok) {

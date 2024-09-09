@@ -53,7 +53,17 @@
                 const selectElement = document.getElementById('sets');
                 const selectedSetIndex = selectElement.selectedIndex;
                 const selectedSet = selectElement.options[selectedSetIndex];
-                generatePack(selectedSet.value);
+                
+                if(!(selectElement.options[0]))
+                {
+                    var message = document.createElement('h1');
+                    message.textContent = "this only works on my home network at the moment, will work for public eventually™";
+                    selectElement.appendChild(message);
+                }
+                else
+                    generatePack(selectedSet.value);
+
+            
             });
             </script>
 <!-- 
@@ -69,18 +79,21 @@
         </div>
     </nav>
     </div>
-        <script>
+        <!-- <script>
             const selectElement = document.getElementById('sets');
             const selectedSetIndex = selectElement.selectedIndex;
+            console.log(!(selectElement.options[1]))
+            console.log(selectElement.options[0])
             if(!(selectElement.options[1]))
             {
                 var message = document.createElement('h1');
                 message.textContent = "this only works on my home network at the moment, will work for public eventually™";
                 document.getElementById('pack-layout').appendChild(message);
             }
-        </script>
+        </script> -->
 
           <div class="pack-layout" id="pack-layout">
+            
             <img id="card1" src="" class="card fullart">
             <img id="card2" src="" class="card fullart">
             <img id="card3" src="" class="card fullart">
