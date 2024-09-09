@@ -78,6 +78,11 @@ function changeColorMode(who)
     
     var main = document.getElementById("main");
     var text = document.getElementById("text");
+
+    //this is a hack please for the love of god fix it the other 
+    //parts are commented below and in packopener.html line:79
+    var text2 = document.getElementById("text2");
+
     var label = document.getElementById("mode-label");
     var navbar = document.getElementById("nav");
 
@@ -93,6 +98,10 @@ function changeColorMode(who)
 
         if(text){
             text.style.color = "black"; 
+            //nasty hack 
+            if(text2){
+                text2.style.color = "black"; 
+            }
         }
         localStorage.setItem("colormode", "main-content bg-light");
     }
@@ -106,6 +115,10 @@ function changeColorMode(who)
     
         if(text){ 
             text.style.color = "white";
+            //nasty hack 
+            if(text2){
+                text2.style.color = "white"; 
+            }
         }
         localStorage.setItem("colormode", "main-content bg-dark");
     }
