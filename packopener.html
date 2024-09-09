@@ -72,7 +72,7 @@
         <script>
             const selectElement = document.getElementById('sets');
             const selectedSetIndex = selectElement.selectedIndex;
-            if(!selectElement.options[0])
+            if(!(selectElement.options[1]))
             {
                 var message = document.createElement('h1');
                 message.textContent = "this only works on my home network at the moment, will work for public eventually™";
