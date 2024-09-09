@@ -4,13 +4,10 @@ var time ;
 //handles colormode consistency across pages
 $(function(){
 
-    console.log(localStorage.getItem("colormode"));
     if(localStorage.getItem("colormode") == null)
     {
         localStorage.setItem("colormode", "main-content bg-light");
     }
-    console.log(localStorage.getItem("colormode"));
-
     if(localStorage.getItem("colormode") != document.getElementById("main").className)
         changeColorMode("script");
 
@@ -136,7 +133,8 @@ function generatePackOld(set, cardCount)
 
 function generatePack(set)
 {
-    fetch(`http://localhost:3000/${set}`)
+    console.log('hello world');
+    fetch(`http://localhost:3000/packGenerator/${set}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -170,4 +168,35 @@ function jumpscare()
         }
     , 500);
 
+}
+
+function loadSets()
+{
+    if(!(document.getElementById('setOption')))
+    {
+        fetch(`http://localhost:3000/sets`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();           
+            })
+            .then(data => {
+                for(let i = 0; i < data.length; i++)
+                {
+                    var dropdown = document.getElementById('sets');
+                    
+                    var option = document.createElement('option');
+                    option.value = data[i].id;
+                    option.textContent = data[i].name;
+                    option.id = "setOption";
+
+                    dropdown.appendChild(option);
+                }
+                    //console.log(data[i].id);
+                
+
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
 }

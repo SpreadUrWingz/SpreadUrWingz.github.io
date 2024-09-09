@@ -10,6 +10,16 @@
         <link rel="stylesheet" href="styles.css"> </link>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="/script.js" defer></script>
+        
+        <!-- only for this page !!! -->
+        <script>
+            window.onload = function()
+            {
+                loadSets();
+            };
+        </script>
+        <!---------------------------->
+
     </head>
 
     <!-- content -->
@@ -33,13 +43,27 @@
     <img id="data" class="card fullart" src=""></img>
     <nav class="navbar navbar-expand-sm navbar-light">
         <div class ="navbar-nav container-fluid fw-bold container">
+            
+            <label for="sets" id="text">select set:</label>
+            <select name="sets" id="sets">
+            </select>
+            <button type="button" class="btn btn-primary" id="generateButton">generate pack</button>
+            <script>
+                document.getElementById('generateButton').addEventListener('click', () => {
+                const selectElement = document.getElementById('sets');
+                const selectedSetIndex = selectElement.selectedIndex;
+                const selectedSet = selectElement.options[selectedSetIndex];
+                generatePack(selectedSet.value);
+            });
+            </script>
+<!-- 
             <button type="button" class="btn btn-warning" onclick="generatePack('base1')">Base Set</button>
             <button type="button" class="btn btn-warning" onclick="generatePack('neo4')">Neo Destiny</button>
             <button type="button" class="btn btn-warning" onclick="generatePack('EX13')">Holon Phantoms</button>
             <button type="button" class="btn btn-warning" onclick="generatePack('BW4')">Next Destinies</button>
             <button type="button" class="btn btn-warning" onclick="generatePack('SM12')">Cosmic Eclipse</button>
             <button type="button" class="btn btn-warning" onclick="generatePack('SWSH11')">Lost Origin</button> 
-            
+             -->
 
 
         </div>
