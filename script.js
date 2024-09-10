@@ -11,6 +11,7 @@ $(function(){
     }
     if(localStorage.getItem("colormode") != document.getElementById("main").className)
         changeColorMode("script");
+    localStorage.setItem("loadedSets", JSON.stringify(null))
 });
 
 
