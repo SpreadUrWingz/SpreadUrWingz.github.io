@@ -113,6 +113,8 @@
 .fullart
 {
     border-width: 0px!important;
+    width:240px; 
+    height:330px;
 }
 
 .pack-layout
