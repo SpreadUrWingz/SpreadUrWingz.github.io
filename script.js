@@ -312,7 +312,7 @@ function generatePack(set)
         document.getElementById(`card${i+1}`).style = "border-radius: 15px";
     }
 
-    if(localStorage.getItem("loadedSet") == null || (JSON.parse(localStorage.getItem("loadedSet"))[0].set.id) != set)
+    if(JSON.parse(localStorage.getItem("loadedSet")) == null || (JSON.parse(localStorage.getItem("loadedSet"))[0].set.id) != set)
     {
         fetch(`https://pokemontcgsdknodejsapp.onrender.com/cards/${set}`)
                 .then(response => {
