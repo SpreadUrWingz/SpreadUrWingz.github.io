@@ -12,7 +12,7 @@ $(function(){
     if(localStorage.getItem("colormode") != document.getElementById("main").className)
         changeColorMode("script");
 
-    localStorage.setItem("loadedSet", "null");
+    localStorage.setItem("loadedSet", null);
 
 });
 
