@@ -81,21 +81,7 @@
                 const selectElement = document.getElementById('sets');
                 const selectedSetIndex = selectElement.selectedIndex;
                 const selectedSet = selectElement.options[selectedSetIndex];
-
-
-                if(!(selectElement.options[0]) || !(document.getElementsByClassName("hidden")[0].textContent))
-                {
-                    
-                    document.getElementsByClassName("hidden")[0].textContent = "this only works on my home network at the moment, will work for public eventually™";
-                    // if(localStorage.getItem("colormode") == "main-content bg-dark")
-                    //     message.style = "color: white";
-                    // message.id = "text";
-                    // document.getElementById("pack-layout").appendChild(message);
-                }
-                else
-                    generatePack(selectedSet.value);
-
-            
+                generatePack(selectedSet.value);      
             });
             </script>
             <img id="card1" src="https://images.pokemontcg.io/" style="border-radius: 15px;"  class="card fullart">
