@@ -11,9 +11,6 @@ $(function(){
     }
     if(localStorage.getItem("colormode") != document.getElementById("main").className)
         changeColorMode("script");
-
-    localStorage.setItem("loadedSet", null);
-
 });
 
 
@@ -314,7 +311,7 @@ function generatePack(set)
         document.getElementById(`card${i+1}`).style = "border-radius: 15px";
     }
 
-    if((JSON.parse(localStorage.getItem("loadedSet"))[0].set.id) != set || localStorage.getItem("loadedSet") == "null")
+    if(localStorage.getItem("loadedSet") == "null" || (JSON.parse(localStorage.getItem("loadedSet"))[0].set.id) != set)
     {
         fetch(`https://pokemontcgsdknodejsapp.onrender.com/cards/${set}`)
                 .then(response => {
